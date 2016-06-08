@@ -1,4 +1,5 @@
 // Javascript for Neighborhod Map App
+/*jshint -W089 */
 
 // ** -- MODEL -- ** //
 var model = {
@@ -122,7 +123,7 @@ var controller = {
     search: function (value) {
         model.locations_names.removeAll();
 
-        if (value == "") {
+        if (value === "") {
             controller.showallMarkers();
         } else {
             controller.removeallMarkers();
@@ -178,9 +179,9 @@ var controller = {
     checkWindowresize: function () {
         var w = window.outerWidth;
 
-        if (w <= 400 && model.isToggled == true) {
+        if (w <= 400 && model.isToggled === true) {
             $("#wrapper").toggleClass("toggled");
-            model.isToggled == false;
+            model.isToggled = false;
         } else {
             model.isToggled = false;
         }
@@ -192,7 +193,7 @@ var controller = {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
 
-            if (model.isToggled == false){
+            if (model.isToggled === false){
                 model.isToggled = true;
             } else {
                 model.isToggled = false;
@@ -214,13 +215,12 @@ var controller = {
                 return -1;
             }
             if (nameA > nameB) {
-                return 1;
-                return 0; //default return value (no sorting)
+                return 1;//default return value (no sorting)
             }
         });
 
         // Check if already sorted, and reverse if so
-        if (model.sorted() == 0) {
+        if (model.sorted() === 0) {
             console.log(model.sorted());
             model.sorted(1);
             model.locations_names(objects_sorted);
@@ -239,11 +239,8 @@ var controller = {
         }
 
         // Check if homepage exists
-        if (f != "No homepage") {
-            f = "<strong>Homepage:</strong> <a href=\'" + f + "\'>" + f + "</a><br />";
-        } else {
-            f = "";
-        }
+
+        f != "No homepage" ? f = "<strong>Homepage:</strong> <a href=\'" + f + "\'>" + f + "</a><br />" : f = "";
 
         // Create full content string
         contentString = $('<div><div><span><h4 style="margin-top: 0px; margin-bottom: 0px;">' +
@@ -266,8 +263,6 @@ var controller = {
 
     // Set up map
     initMap: function () {
-        var map;
-        var infowindow = [];
         var self = this;
 
         // Generate markers for each location
@@ -344,17 +339,17 @@ var controller = {
 
         // Set up keys to be replaced
         var keys = [];
-        for (i in partial_object) {
+        for (var i in partial_object) {
             keys.push(i);
         }
 
         // Sort through standing object, and replace var per matching key
-        for (i in local) {
+        for (var r in local) {
             for (var t = 0; t <= keys.length; t++){
                 // If match found
-                if (i == keys[t]) {
+                if (r == keys[t]) {
                     // Replace key with var
-                    local[i] = partial_object[keys[t]];
+                    local[r] = partial_object[keys[t]];
                 }
             }
         }
@@ -384,7 +379,6 @@ var controller = {
                 var ven_name = data.response.venue.name;
                 var ven_phone = data.response.venue.contact.formattedPhone;
                 var ven_address = data.response.venue.location.formattedAddress[0] + " " + data.response.venue.location.formattedAddress[1];
-                var ven_url = data.response.venue.url;
                 var ven_twitter = "@" + data.response.venue.contact.twitter;
                 var ven_checkins = data.response.venue.stats.checkinsCount;
 

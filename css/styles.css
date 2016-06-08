@@ -1,5 +1,6 @@
 /* Styles (CSS) for Neighborhood Map App */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0px;
     padding: 0px;
@@ -7,6 +8,7 @@ html, body {
 }
 #map {
     height: 100%;
+    margin-top: 0px;
     z-index: 0;
 }
 
@@ -33,5 +35,4 @@ h1.heading {
     height: 100%;
     position: absolute;
     top: 0;
-    /* z-index: 1; */
 }

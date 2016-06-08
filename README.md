@@ -9,7 +9,7 @@ This is a web app that displays information about local movie theaters in the Oa
 
 ### Instructions:
 1. Open index.html in your browser of choice.
-2. Explore to your complete content.
+2. Explore to your honest content.
 
 ***
 

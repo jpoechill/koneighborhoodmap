@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>APP List View: A</title>
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/d499a08083.js"></script>
+</head>
+<body>
+
+  <div id="sidebar-wrapper" class="content">
+            <ul class="sidebar-nav">
+                <!-- BEGIN SEARCH INPUT -->
+                <li>
+                    <div class="input-group">
+                    <input type="text" class="form-control" id="appendedInput" placeholder="Search..." data-bind="value: query, valueUpdate: 'keyup'">
+                    <span class="input-group-btn btn-group">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-filter"></span></span> </button>
+                    </span></div>
+                </li>
+                <!-- END SEARCH INPUT -->
+
+                <!-- ko foreach: locations -->
+                <li>
+                    <a href="#" data-bind="text: name"></a>
+                </li>
+                <!-- /ko -->
+            </ul>
+
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/knockout-3.4.0.js"></script>
+<script type="text/javascript" src="js/listview.js"></script>
+</body>
+</html>

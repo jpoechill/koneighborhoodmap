@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <title>APP List View: B</title>
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/d499a08083.js"></script>
+</head>
+<body>
+
+  <div id="sidebar-wrapper" class="content">
+            <ul class="sidebar-nav">
+                <!-- BEGIN HEADER -->
+                <li class="sidebar-brand">
+                    <a href="#"><strong data-bind="text: app_name"></strong></a>
+                </li>
+                <!-- END HEADER -->
+
+                <!-- BEGIN SEARCH INPUT -->
+                <li>
+                    <div class="input-group">
+                    <input type="search" class="form-control" id="appendedInput" placeholder="Search...">
+                    </div>
+                </li>
+                <!-- END SEARCH INPUT -->
+
+                <!-- ko foreach: locations -->
+                <li>
+                    <a href="#" data-bind="text: name"></a>
+                </li>
+                <!-- /ko -->
+
+                <li>
+                    <a href="#">Google API</a>
+                </li>
+                <li>
+                    <a href="#">Foursquare API</a>
+                </li>
+            </ul>
+
+<!--
+    <input placeholder="Search…" data-bind="value: query, valueUpdate: 'keyup'" type="search">
+    <ul  data-bind="template: {name:'location', foreach:locations}"></ul>
+
+      <script type="text/html" id="location">
+        <li>
+          <a href="#"  data-bind="text: name"></a>
+        </li>
+      </script> -->
+
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/knockout-3.4.0.js"></script>
+<script type="text/javascript" src="js/listview.js"></script>
+</body></html>

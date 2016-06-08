@@ -1,0 +1,78 @@
+<!-- Html for Cat clicker index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Neighborhood Map</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        background-color: darkgray;
+      }
+      #map {
+        height: 90%;
+      }
+    </style>
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+
+<div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#"><strong data-bind="text: app_name"></strong></a>
+                </li>
+                    <div class="input-group">
+                        <input type="text" class="form-control input-group" placeholder="Search...">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" data-bind="click: controller.sortItems_byname, enable: locations().length > 1"><span class="glyphicon glyphicon-filter"></span></button>
+                        </span>
+                    </div>
+                </li>
+                <!-- ko foreach: locations -->
+                <li>
+                    <a href="#" data-bind="text: name"></a>
+                </li>
+                <!-- /ko -->
+                <li>
+                    <a href="#">Google API</a>
+                </li>
+                <li>
+                    <a href="#">Foursquare API</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+
+
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_4N-V3lOc9Da9_XF-8mt5yumBPP1VB70&callback=controller.initMap"
+async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/knockout-3.4.0.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

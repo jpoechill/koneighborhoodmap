@@ -1,0 +1,84 @@
+<!-- Html for Cat clicker index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Neighborhood Map</title>
+    <script type="text/javascript" src="js/knockout-3.4.0.js"></script>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr><th>First name</th> <th>Last name</th></tr>
+    </thead>
+    <tbody data-bind="foreach: locations">
+        <tr>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: description"></td>
+        </tr>
+    </tbody>
+    <a data-bind="text: app_name"></a>
+</table>
+
+<ul>
+    <li>Hello, World!</li>
+     <!-- ko foreach: locations -->
+    <li data-bind="text: name"></li>
+    <!-- /ko -->
+</ul>
+
+<script type="text/javascript">
+
+var model = {
+    app_name: "Po's Movie Theaters",
+    locations: [
+        {
+            name: "Grand Lake Theatre",
+            venue_id: "",
+            description: "Ooga booga",
+            long: 37.811539,
+            lat: -122.247356
+        },
+        {
+            name: "Piedmont Theatre",
+            venue_id: "",
+            description: "Ooga booga",
+            long: 37.827362,
+            lat: -122.250927
+        },
+        {
+            name: "The New Parkway Theater",
+            venue_id: "",
+            description: "Ooga booga",
+            long: 37.813960,
+            lat: -122.267457
+        },
+        {
+            name: "AMC Bay Street 16",
+            venue_id: "",
+            description: "Ooga booga",
+            long: 37.833407,
+            lat: -122.291631
+        },
+        {
+            name: "The Paramount Theatre",
+            venue_id: "",
+            description: "Ooga booga",
+            long: 37.809874,
+            lat: -122.268523
+        },
+        {
+            name: "The Palace Theatre",
+            venue_id: "",
+            description: "Ooga booga",
+            long: 37.784373,
+            lat: -122.236023
+        }
+    ]
+};
+
+    ko.applyBindings(model);
+</script>
+
+</body>
+</html>

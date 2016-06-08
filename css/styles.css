@@ -1,0 +1,26 @@
+/* Styles (CSS) for Neighborhood Map App */
+html, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: darkgray;
+}
+#map {
+    height: 90%;
+}
+
+#google_map {width: 90%; height: 500px;margin-top:0px;margin-left:auto;margin-right:auto;}
+    h1.heading{text-align:center;font: 18px Georgia, "Times New Roman", Times, serif;}
+
+.map-info-window {
+    width:200px;
+    height:200px;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}

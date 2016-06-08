@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Neighborhood Map</title>
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/d499a08083.js"></script>
+</head>
+<body onresize="controller.checkWindowresize()">
+
+<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#"><strong data-bind="text: app_name"></strong></a>
+            </li>
+            <li>
+                <div class="input-group">
+                <input type="text" class="form-control" id="appendedInput" placeholder="Search..." data-bind="value: query, valueUpdate: 'keyup'">
+                <span class="input-group-btn btn-group"><button class="btn btn-default dropdown-toggle" data-bind="click: controller.sortItems_byname, enable: locations().length > 1">
+                <span class="glyphicon glyphicon-filter"></span></span></button>
+                </div>
+            </li>
+
+            <!-- ko foreach: locations_names -->
+            <li>
+                <a href="#" data-bind="text: name, value: id, click: controller.listviewClick"></a>
+            </li>
+            <!-- /ko -->
+
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    <div id="map"></div>
+ </div>
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_4N-V3lOc9Da9_XF-8mt5yumBPP1VB70&callback=controller.initMap" onerror="alert('Oh, no! There was an error loading the map. Please refresh and try again.')"
+async defer ></script>
+<script src="js/knockout-3.4.0.js"></script>
+<script src="js/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</body>
+</html>

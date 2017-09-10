@@ -239,8 +239,11 @@ var controller = {
         }
 
         // Check if homepage exists
-
-        f != "No homepage" ? f = "<strong>Homepage:</strong> <a href=\'" + f + "\'>" + f + "</a><br />" : f = "";
+        if (f != "No homepage") {
+            f = "<strong>Homepage:</strong> <a href=\'" + f + "\'>" + f + "</a><br />";
+        } else {
+            f = "";
+        }
 
         // Create full content string
         contentString = $('<div><div><span><h4 style="margin-top: 0px; margin-bottom: 0px;">' +
